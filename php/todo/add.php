@@ -1,12 +1,12 @@
 <?php
-session_start();
+require_once __DIR__ . '/../db/db.php';
 
 $task = $_POST['task'] ?? '';
 
 if (trim($task) !== '') {
-    $_SESSION['todos'][] = $task;
+    $stmt = $pdo->prepare("INSERT INTO todos (task) VALUES (:task)");
+    $stmt->execute(['task' => $task]);
 }
 
-// 一覧画面に戻る
 header('Location: /');
 exit;
