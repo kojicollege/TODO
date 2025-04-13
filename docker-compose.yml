@@ -1,6 +1,5 @@
-version: '3.8'
 services:
-  web:
+  app:
     build: ./php
     ports:
       - "8000:80"
