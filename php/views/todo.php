@@ -19,6 +19,15 @@
     <?php foreach ($todos as $todo): ?>
     <li>
       <?= htmlspecialchars($todo['task'], ENT_QUOTES, 'UTF-8') ?>
+      <!-- 完了トグルボタン -->
+      <form action="/complete" method="POST" style="display:inline;">
+        <input type="hidden" name="id" value="<?= $todo['id'] ?>">
+        <button type="submit">
+          <?= $todo['is_completed'] ? '未完了に戻す' : '完了' ?>
+        </button>
+      </form>
+
+      <!-- 削除ボタン -->
       <form action="/delete" method="POST" style="display:inline;">
         <input type="hidden" name="id" value="<?= $todo['id'] ?>">
         <button type="submit">削除</button>
