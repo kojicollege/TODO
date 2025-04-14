@@ -45,11 +45,18 @@
         </button>
       </form>
 
+      <!-- 編集ボタン追加 -->
+      <form action="/edit" method="GET" style="display:inline;">
+        <input type="hidden" name="id" value="<?= $todo['id'] ?>">
+        <button type="submit">編集</button>
+      </form>
+
       <!-- 削除 -->
       <form action="/delete" method="POST" style="display:inline;">
         <input type="hidden" name="id" value="<?= $todo['id'] ?>">
         <button type="submit">削除</button>
       </form>
+
     </li>
     <?php endforeach; ?>
   </ul>
