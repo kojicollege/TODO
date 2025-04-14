@@ -28,6 +28,13 @@
   </form>
 
   <h2>やること一覧</h2>
+
+  <!-- フィルターリンク -->
+  <div>
+    <a href="/?filter=all">すべて</a> |
+    <a href="/?filter=active">未完了</a> |
+    <a href="/?filter=completed">完了済み</a>
+  </div>
   <ul>
     <?php foreach ($todos as $todo): ?>
     <li class="<?= $todo['is_completed'] ? 'completed' : '' ?>">
